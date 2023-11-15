@@ -1,0 +1,36 @@
+{
+    "database_structure": {
+        "fields": [
+            {
+                "name": "name",
+                "type": "string",
+                "description": "Nome do produto"
+            },
+            {
+                "name": "brand",
+                "type": "string",
+                "description": "Marca do produto"
+            },
+            {
+                "name": "unit",
+                "type": "string",
+                "description": "Unidade de medida do produto"
+            },
+            {
+                "name": "group",
+                "type": "string",
+                "description": "Grupo ao qual o produto pertence"
+            },
+            {
+                "name": "price",
+                "type": "number",
+                "description": "Preço do produto"
+            },
+            {
+                "name": "supplier",
+                "type": "string",
+                "description": "Fornecedor do produto"
+            }
+        ]
+    }
+}

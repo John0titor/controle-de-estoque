@@ -1,0 +1,56 @@
+1699713317822	geckodriver	INFO	Listening on 127.0.0.1:64723
+1699713320888	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64724" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Rafael\\AppData\\Local\\Temp\\rust_mozprofile7AzWJM"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1699713321510	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1699713321744	Marionette	INFO	Listening on port 64737
+Read port: 64737
+WebDriver BiDi listening on ws://127.0.0.1:64724
+1699713321875	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:64724/devtools/browser/5ae08c5e-2d44-4d7e-a6ba-89a9526f2c93
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://casadoscelulares.flyerp.com.br."
+1699713337072	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'interactive'.
+1699713351588	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: http://casadoscelulares.flyerp.com.br/NovoConsultaPedidosVenda.aspx, line 9: Script terminated by timeout at:
+nrWrapper@http://casadoscelulares.flyerp.com.br/NovoConsultaPedidosVenda.aspx:9:14754
+
+1699713478406	Marionette	INFO	Stopped listening on port 64737
+Dynamically enable window occlusion 1
+1699713481551	geckodriver	INFO	Listening on 127.0.0.1:64909
+1699713484605	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64910" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Rafael\\AppData\\Local\\Temp\\rust_mozprofilef6MCdd"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1699713485124	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1699713485352	Marionette	INFO	Listening on port 64918
+WebDriver BiDi listening on ws://127.0.0.1:64910
+Read port: 64918
+1699713485651	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:64910/devtools/browser/82d9a844-460e-422c-918d-639fb66a9197
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://casadoscelulares.flyerp.com.br."
+1699713500114	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'interactive'.
+1699713515240	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: http://casadoscelulares.flyerp.com.br/NovoPedidoVenda.aspx?IdPedido=6586, line 9: Script terminated by timeout at:
+nrWrapper@http://casadoscelulares.flyerp.com.br/NovoPedidoVenda.aspx?IdPedido=6586:9:14754
+
+1699715576653	Marionette	INFO	Stopped listening on port 64918
+Dynamically enable window occlusion 1
+9Mx"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1699713745752	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1699713745941	Marionette	INFO	Listening on port 65154
+WebDriver BiDi listening on ws://127.0.0.1:65145
+Read port: 65154
+1699713746206	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:65145/devtools/browser/83a7cbef-369a-4deb-9f1c-b834d32103c7
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://casadoscelulares.flyerp.com.br."
+1699713760545	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'interactive'.
+1699713777178	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: http://casadoscelulares.flyerp.com.br/NovoPedidoVenda.aspx?IdPedido=6586, line 9: Script terminated by timeout at:
+nrWrapper@http://casadoscelulares.flyerp.com.br/NovoPedidoVenda.aspx?IdPedido=6586:9:14754
+
+1699715120840	Marionette	INFO	Stopped listening on port 65154
+Dynamically enable window occlusion 1
