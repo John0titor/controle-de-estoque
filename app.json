@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "orientation": "portrait",
   "icon": "./assets/icon.png",
-  "userInterfaceStyle": "light",
+  "userInterfaceStyle": "automatic",
   "splash": {
     "image": "./assets/splash.png",
     "resizeMode": "contain",
@@ -35,19 +35,26 @@
   },
   "_internal": {
     "isDebug": false,
-    "projectRoot": "c:\\Users\\Rafael\\Desktop\\testes\\Login-App4\\login-teste3",
+    "projectRoot": "c:\\Users\\Rafael\\Desktop\\testes\\Login-App4\\controle-de-estoque",
     "dynamicConfigPath": null,
-    "staticConfigPath": "c:\\Users\\Rafael\\Desktop\\testes\\Login-App4\\login-teste3\\app.json",
-    "packageJsonPath": "c:\\Users\\Rafael\\Desktop\\testes\\Login-App4\\login-teste3\\package.json",
+    "staticConfigPath": "c:\\Users\\Rafael\\Desktop\\testes\\Login-App4\\controle-de-estoque\\app.json",
+    "packageJsonPath": "c:\\Users\\Rafael\\Desktop\\testes\\Login-App4\\controle-de-estoque\\package.json",
     "autolinkedModules": [
       "expo",
       "expo-application",
       "expo-constants",
+      "expo-dev-client",
+      "expo-dev-launcher",
+      "expo-dev-menu",
+      "expo-dev-menu-interface",
       "expo-file-system",
       "expo-font",
+      "expo-json-utils",
       "expo-keep-awake",
+      "expo-manifests",
       "expo-modules-core",
-      "expo-splash-screen"
+      "expo-splash-screen",
+      "expo-updates-interface"
     ],
     "pluginHistory": {
       "react-native-maps": {
@@ -101,6 +108,18 @@
       "expo-file-system": {
         "name": "expo-file-system",
         "version": "15.4.4"
+      },
+      "expo-dev-menu": {
+        "name": "expo-dev-menu",
+        "version": "3.2.2"
+      },
+      "expo-dev-launcher": {
+        "name": "expo-dev-launcher",
+        "version": "2.4.14"
+      },
+      "expo-dev-client": {
+        "name": "expo-dev-client",
+        "version": "2.4.12"
       }
     }
   },
@@ -115,5 +134,5 @@
   "mods": {
     "android": {},
     "ios": {}
-  },
+  }
 }

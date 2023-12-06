@@ -11,7 +11,7 @@ export default function ListingScreen() {
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState([]);
 
-    // Função para buscar os produtos no Firebase
+
     const fetchProducts = async () => {
         try {
             const productsCollection = collection(db, 'products');
@@ -28,6 +28,7 @@ export default function ListingScreen() {
             setProducts(productsArray);
         } catch (error) {
             console.error('Error fetching products:', error);
+            throw error;
         }
     };
 
@@ -35,17 +36,17 @@ export default function ListingScreen() {
         fetchProducts();
     }, []);
 
-    const onEditPress = (productId) => {
-        navigation.navigate('Product', { productId });
+    const onEditPress = (productData) => {
+        navigation.navigate('Product', { productData });
     };
 
     const renderItem = ({ item }) => (
         <TouchableOpacity
             style={styles.productItem}
-            onPress={() => onEditPress(item.id)}>
+            onPress={() => onEditPress(item)}>
             <View style={styles.productItem}>
                 <Text style={styles.productName}>{item.name}</Text>
-                <Text style={styles.productDetail}>Quantidade: {item.brand}</Text>
+                <Text style={styles.productDetail}>Quantidade: {item.quantity}</Text>
                 <Text style={styles.productDetail}>Preço: ${item.price}</Text>
             </View>
         </TouchableOpacity>

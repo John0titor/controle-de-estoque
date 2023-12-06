@@ -4,7 +4,7 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        padding: 16,
         backgroundColor: '#fff',
     },
     title: {
@@ -12,11 +12,21 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 16,
     },
+    input: {
+        height: 48,
+        width: '100%',
+        borderRadius: 5,
+        overflow: 'hidden',
+        backgroundColor: '#f2f2f2',
+        marginTop: 10,
+        marginBottom: 10,
+        paddingLeft: 16,
+    },
     button: {
-        backgroundColor: '#27ae60',
+        backgroundColor: '#3498db',
         marginTop: 20,
         height: 48,
-        width: '70%',
+        width: '100%',
         borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center',
@@ -25,16 +35,5 @@ export default StyleSheet.create({
         color: 'white',
         fontSize: 16,
         fontWeight: 'bold',
-    },
-    logoutButton: {
-        backgroundColor: 'red', // ou a cor desejada para o botão de logout
-        padding: 10,
-        borderRadius: 5,
-        marginTop: 70,
-    },
-
-    logoutButtonTitle: {
-        color: 'white',
-        textAlign: 'center',
     },
 });

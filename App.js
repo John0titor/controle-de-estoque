@@ -5,7 +5,7 @@ import { firebase } from './src/firebase/config';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from 'react';
 import 'react-native-gesture-handler';
-import { HomeScreen, LoginScreen, RegistrationScreen, ProductScreen, ListingScreen } from './src/screens';
+import { HomeScreen, LoginScreen, RegistrationScreen, ProductScreen, ListingScreen, SupplierScreen, OrderScreen, DashboardScreen } from './src/screens';
 if (!global.btoa) { global.btoa = encode }
 if (!global.atob) { global.atob = decode }
 
@@ -48,6 +48,9 @@ export default function App() {
             </Stack.Screen>
             <Stack.Screen name="Product" component={ProductScreen} />
             <Stack.Screen name="Listing" component={ListingScreen} />
+            <Stack.Screen name="Order" component={OrderScreen} />
+            <Stack.Screen name="Dashboard" component={DashboardScreen} />
+            <Stack.Screen name="Supplier" component={SupplierScreen} />
           </>
         ) : (
           <>
