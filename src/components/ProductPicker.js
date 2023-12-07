@@ -3,6 +3,7 @@ import { Picker } from '@react-native-picker/picker';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from '../firebase/config'
 import styles from './styles';
+import { View } from 'react-native';
 
 const ProductsPicker = ({ onProductChange }) => {
     const [product, setProduct] = useState('');
@@ -37,17 +38,18 @@ const ProductsPicker = ({ onProductChange }) => {
     }, [product, onProductChange]);
 
     return (
-        <Picker
-            mode='dialog'
-            style={styles.input}
-            selectedValue={product}
-            onValueChange={(value) => setProduct(value)}
-            itemStyle={styles.input}
-        >
-            {options.map((option) => (
-                <Picker.Item key={option.id} label={option.name} value={option} />
-            ))}
-        </Picker>
+        <View style={styles.input}>
+            <Picker
+                mode='dialog'
+                selectedValue={product}
+                onValueChange={(value) => setProduct(value)}
+                itemStyle={styles.input}
+            >
+                {options.map((option) => (
+                    <Picker.Item key={option.id} label={option.name} value={option} />
+                ))}
+            </Picker>
+        </View>
     );
 };
 

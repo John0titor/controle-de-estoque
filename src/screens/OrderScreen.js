@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, TouchableOpacity } from 'react-native';
-import { Provider, TextInput, Button, HelperText, Portal, Modal, Text, List } from 'react-native-paper';
+import { View, FlatList, TouchableOpacity, TextInput } from 'react-native';
+import { Provider, Button, HelperText, Portal, Modal, Text, List } from 'react-native-paper';
 import { Picker } from '@react-native-picker/picker';
 import styles from './styles';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import { format } from 'date-fns';
 import { collection, getDoc, getDocs, updateDoc } from "firebase/firestore";
-import { db } from '../../firebase/config';
-import SupplierPicker from '../../components/SupplierPicker';
+import { db } from '../firebase/config';
+import SupplierPicker from '../components/SupplierPicker';
 import { addDoc, doc, setDoc, Timestamp, increment } from "firebase/firestore";
-import ProductsPicker from '../../components/ProductPicker';
+import ProductsPicker from '../components/ProductPicker';
 
 export default function OrderScreen() {
     const [id, setId] = useState('');
@@ -152,55 +152,68 @@ export default function OrderScreen() {
             <View style={styles.container}>
                 <Text style={styles.title}>Pedido</Text>
 
-                <List.Section>
+                <List.Section style={{
+                    backgroundColor: '#fff',
+                    width: '90%',
+                    marginTop: 2,
+                    padding: 8
+                }} >
                     <List.Accordion
+
                         title="Informações"
                         left={(props) => <List.Icon {...props} icon='' />}
                         expanded={expanded}
                         onPress={handlePress}
                     >
+                        <View style={{
+                            width: '100%',
+                            borderWidth: 1,
+                            borderRadius: 8,
+                            marginTop: 2,
+                            padding: 2
+                        }} >
+
+                            <SupplierPicker onSupplierChange={handleSupplierChange} />
 
 
-                        <SupplierPicker onSupplierChange={handleSupplierChange} />
+                            {isDatePickerVisible ? (
+                                <TextInput
+                                    placeholder="Data"
+                                    value={date.toLocaleString()}
+                                    style={styles.input}
+                                    editable={false}
+                                />
+                            ) : (
+                                <TextInput
+                                    placeholder="Data"
+                                    value={date}
+                                    style={styles.input}
+                                    onTouchStart={showDatePicker}
+                                />
+                            )}
+                            <Portal>
+                                <Modal visible={isDatePickerVisible} onDismiss={hideDatePicker}>
+                                    <View style={{ backgroundColor: 'white', padding: 16 }}>
+                                        <DateTimePicker
+                                            isVisible={isDatePickerVisible}
+                                            onConfirm={handleConfirm}
+                                            onCancel={hideDatePicker}
+                                            mode="date"
+                                        />
+                                    </View>
+                                </Modal>
+                            </Portal>
 
-
-                        {isDatePickerVisible ? (
                             <TextInput
-                                placeholder="Data"
-                                value={date.toLocaleString()}
                                 style={styles.input}
-                                editable={false}
+                                placeholder="Valor do frete"
+                                value={valorFrete}
+                                onChangeText={(text) => setValorFrete(parseInt(text))}
+                                keyboardType="numeric"
                             />
-                        ) : (
-                            <TextInput
-                                placeholder="Data"
-                                value={date}
-                                style={styles.input}
-                                onTouchStart={showDatePicker}
-                            />
-                        )}
-                        <Portal>
-                            <Modal visible={isDatePickerVisible} onDismiss={hideDatePicker}>
-                                <View style={{ backgroundColor: 'white', padding: 16 }}>
-                                    <DateTimePicker
-                                        isVisible={isDatePickerVisible}
-                                        onConfirm={handleConfirm}
-                                        onCancel={hideDatePicker}
-                                        mode="date"
-                                    />
-                                </View>
-                            </Modal>
-                        </Portal>
 
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Valor do frete"
-                            value={valorFrete}
-                            onChangeText={(text) => setValorFrete(parseInt(text))}
-                            keyboardType="numeric"
-                        />
-
-                        <Button onPress={handlePress}>Salvar</Button>
+                            <Button onPress={handlePress}>Salvar</Button>
+                        </View>
                     </List.Accordion>
                 </List.Section>
 
@@ -229,6 +242,11 @@ export default function OrderScreen() {
                 </TouchableOpacity>
 
                 <FlatList
+                    style={{
+                        width: '100%',
+                        marginTop: 2,
+                        padding: 7
+                    }}
                     data={items}
                     renderItem={({ item, index }) => (
                         <View style={styles.itemContainer}>

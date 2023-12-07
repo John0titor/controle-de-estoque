@@ -4,6 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from '../firebase/config'
 import styles from './styles';
 import SearchableDropDown from 'react-native-searchable-dropdown';
+import { View } from 'react-native';
 
 
 const SupplierPicker = ({ onSupplierChange }) => {
@@ -40,17 +41,18 @@ const SupplierPicker = ({ onSupplierChange }) => {
     }, [fornecedor, onSupplierChange]);
 
     return (
-        <Picker
-            mode='dialog'
-            style={styles.input}
-            onValueChange={(value) => setFornecedor(value)}
-            itemStyle={styles.input}
-            prompt='Escolha um fornecedor'
-        >
-            {options.map((option) => (
-                <Picker.Item key={option.id} label={option.name} value={option.id} />
-            ))}
-        </Picker>
+        <View style={styles.input}>
+            <Picker
+                mode='dialog'
+                onValueChange={(value) => setFornecedor(value)}
+                itemStyle={styles.input}
+                prompt='Escolha um fornecedor'
+            >
+                {options.map((option) => (
+                    <Picker.Item key={option.id} label={option.name} value={option.id} />
+                ))}
+            </Picker>
+        </View >
     );
 
 

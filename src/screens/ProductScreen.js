@@ -4,8 +4,8 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import styles from './styles';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { addDoc, doc, getDoc, collection, deleteDoc, setDoc } from "firebase/firestore";
-import { db } from '../../firebase/config';
-import SupplierPicker from '../../components/SupplierPicker';
+import { db } from '../firebase/config';
+import SupplierPicker from '../components/SupplierPicker';
 
 export default function ProductScreen({ route, navigation }) {
     const { productData } = route.params || {};
@@ -132,62 +132,58 @@ export default function ProductScreen({ route, navigation }) {
 
     return (
         <View style={styles.container}>
-            <KeyboardAwareScrollView
-                style={{ flex: 1, width: '100%' }}
-                keyboardShouldPersistTaps="always">
-                <Text style={styles.title}>Detalhes do Produto</Text>
+            <Text style={styles.title}>Detalhes do Produto</Text>
 
 
-                <TextInput
-                    style={styles.input}
-                    placeholder='Nome'
-                    onChangeText={(text) => setName(text)}
-                    value={name}
-                />
+            <TextInput
+                style={styles.input}
+                placeholder='Nome'
+                onChangeText={(text) => setName(text)}
+                value={name}
+            />
 
-                <TextInput
-                    style={styles.input}
-                    placeholder='Marca'
-                    onChangeText={(text) => setBrand(text)}
-                    value={brand}
-                />
+            <TextInput
+                style={styles.input}
+                placeholder='Marca'
+                onChangeText={(text) => setBrand(text)}
+                value={brand}
+            />
 
-                <TextInput
-                    style={styles.input}
-                    placeholder='Unidade de Medida'
-                    onChangeText={(text) => setUnit(text)}
-                    value={unit}
-                />
+            <TextInput
+                style={styles.input}
+                placeholder='Unidade de Medida'
+                onChangeText={(text) => setUnit(text)}
+                value={unit}
+            />
 
-                <TextInput
-                    style={styles.input}
-                    placeholder='Grupo'
-                    onChangeText={(text) => setGroup(text)}
-                    value={group}
-                />
+            <TextInput
+                style={styles.input}
+                placeholder='Grupo'
+                onChangeText={(text) => setGroup(text)}
+                value={group}
+            />
 
-                <TextInput
-                    style={styles.input}
-                    placeholder='Preço'
-                    onChangeText={(text) => setPrice(text)}
-                    value={price}
-                    keyboardType="numeric"
-                />
+            <TextInput
+                style={styles.input}
+                placeholder='Preço'
+                onChangeText={(text) => setPrice(text)}
+                value={price}
+                keyboardType="numeric"
+            />
 
-                <SupplierPicker onSupplierChange={handleSupplierChange} />
+            <SupplierPicker onSupplierChange={handleSupplierChange} />
 
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={onSavePress}>
-                    <Text style={styles.buttonTitle}>Salvar</Text>
-                </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={onSavePress}>
+                <Text style={styles.buttonTitle}>Salvar</Text>
+            </TouchableOpacity>
 
-                <TouchableOpacity
-                    style={[styles.button, { backgroundColor: 'red' }]}
-                    onPress={onDeletePress}>
-                    <Text style={styles.buttonTitle}>Excluir</Text>
-                </TouchableOpacity>
-            </KeyboardAwareScrollView>
-        </View>
+            <TouchableOpacity
+                style={[styles.button, { backgroundColor: 'red' }]}
+                onPress={onDeletePress}>
+                <Text style={styles.buttonTitle}>Excluir</Text>
+            </TouchableOpacity>
+        </View >
     );
 }

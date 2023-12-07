@@ -23,16 +23,12 @@ export default function HomeScreen({ navigation }) {
         navigation.navigate('Order');
     };
 
-    const onDashboardPress = () => {
-        navigation.navigate('Dashboard');
-    };
 
 
     const onLogoutPress = async () => {
         signOut(auth).then(() => {
-            // Sign-out successful.
         }).catch((error) => {
-            // An error happened.
+            console.log(error);
         });
     };
     return (
@@ -59,17 +55,10 @@ export default function HomeScreen({ navigation }) {
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={onDashboardPress}>
-                <Text style={styles.buttonTitle}>Ir para Dashboard</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-                style={styles.button}
                 onPress={onOrderPress}>
                 <Text style={styles.buttonTitle}>Ir para Pedido</Text>
             </TouchableOpacity>
 
-            {/* Botão de Logout */}
             <TouchableOpacity
                 style={styles.logoutButton}
                 onPress={onLogoutPress}>

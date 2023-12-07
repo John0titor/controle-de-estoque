@@ -4,7 +4,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import styles from './styles';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { addDoc, doc, getDoc, collection, updateDoc, setDoc, deleteDoc } from "firebase/firestore";
-import { db } from '../../firebase/config';
+import { db } from '../firebase/config';
 
 export default function SupplierScreen({ navigation }) {
     const [id, setId] = useState('');
